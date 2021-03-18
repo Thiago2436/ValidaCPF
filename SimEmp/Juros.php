@@ -1,3 +1,5 @@
+<a href = "/PHP/SimEmp/index.html"> <h2> <img src="/PHP/SGN_03_11_2021_1615491271859.png" width="100" height="100"> Voltar</h2></a>
+
 <?php
 $Capital = $_POST['Valor'];
 $Parc =$_POST['Parc'];
@@ -14,14 +16,25 @@ if($Capital == 'Escolha Uma'){
     else{ 
         // calculo do montante M= C *(1+tx)**Parc.
 $M = ($Capital*((1+$tx)**$Parc));
+
 $ValParc = $M/$Parc;
 $tx=($tx*100);
 //Resumo da Simulação
+
 echo "<h1> RESUMO DA SIMULAÇAO :  </h1><br><br>";
 echo "<b>Total R$ :</b>".$M."<br><br>";
 echo " <b>Valor Por Parcela : </b>".$ValParc." <br> Em : ".$Parc." Vezes<br><br>";
 echo " Taxa de serviço : ".$tx."<br><br>";
-    }
+}
+echo " <h1> OU EM : </H1><br>";
+for($i = 2; $i <=60; $i++)
+{
+    
+echo $i.":  Parcelas DE";
+echo " Valor : ".($M/$i)."<br>";
+
+}
+
 ?>
 <html>
 <br>
